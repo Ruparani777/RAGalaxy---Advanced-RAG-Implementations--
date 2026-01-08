@@ -87,7 +87,17 @@ Vanilla RAG → CRAG → Memory-Augmented → Multi-Hop → Feedback Loop → Pl
 
 ### 1. Vanilla RAG (Baseline)
 
-#### 📋 Overview
+#### � Definition
+**Vanilla RAG** is the foundational Retrieval-Augmented Generation architecture that combines parametric knowledge from Large Language Models (LLMs) with non-parametric knowledge retrieved from external document collections. It establishes the baseline performance for all subsequent RAG variants by implementing a simple yet effective three-stage pipeline: document indexing, retrieval, and generation.
+
+#### 🎨 Design Principles
+- **Modularity**: Clean separation between retrieval and generation components
+- **Simplicity**: Minimal architectural complexity for maximum reliability
+- **Extensibility**: Foundation for advanced RAG variants through component substitution
+- **Efficiency**: Optimized for computational resources while maintaining effectiveness
+- **Reproducibility**: Deterministic behavior with configurable parameters
+
+#### �📋 Overview
 The foundational RAG implementation establishing the performance baseline for all subsequent architectures.
 
 #### 🎯 Key Features
@@ -145,7 +155,17 @@ answer = rag.query("What is quantum computing?")
 
 ### 2. Corrective RAG (CRAG)
 
-#### 📋 Overview
+#### � Definition
+**Corrective RAG (CRAG)** is an advanced retrieval-augmented generation architecture that implements self-correction mechanisms to improve answer quality. It evaluates the relevance of retrieved documents using an LLM-as-judge approach and applies corrective actions when retrieval quality falls below acceptable thresholds, including query reformulation and knowledge source correction.
+
+#### 🎨 Design Principles
+- **Self-Correction**: Autonomous quality assessment and improvement
+- **Iterative Refinement**: Multi-round correction cycles with diminishing returns
+- **Confidence Thresholding**: Adaptive correction triggers based on retrieval quality
+- **Minimal Intervention**: Only correct when necessary to maintain efficiency
+- **Explainable Corrections**: Transparent reasoning for applied corrections
+
+#### �📋 Overview
 Self-correcting RAG that evaluates retrieval quality and applies corrective actions through iterative refinement.
 
 #### 🎯 Key Features
@@ -190,7 +210,17 @@ response = crag.query_with_correction("Complex technical question")
 
 ### 3. Memory-Augmented RAG
 
-#### 📋 Overview
+#### � Definition
+**Memory-Augmented RAG** extends traditional RAG by incorporating persistent memory mechanisms that maintain conversation history and extract long-term factual knowledge. It implements a dual-memory system combining short-term contextual memory with long-term factual memory, enabling personalized and contextually aware responses across multiple interactions.
+
+#### 🎨 Design Principles
+- **Dual Memory Architecture**: Separation of short-term and long-term memory systems
+- **Knowledge Distillation**: Automatic extraction of factual knowledge from conversations
+- **Contextual Augmentation**: Memory-informed query enhancement
+- **Personalization**: User-specific memory profiles and preferences
+- **Memory Consolidation**: Efficient storage and retrieval of accumulated knowledge
+
+#### �📋 Overview
 Context-aware RAG maintaining conversation history and extracting long-term factual knowledge.
 
 #### 🎯 Key Features
@@ -240,7 +270,17 @@ response = rag.query_with_memory("Follow up on our previous discussion", user_id
 
 ### 4. Multi-Hop RAG
 
-#### 📋 Overview
+#### � Definition
+**Multi-Hop RAG** is a reasoning-intensive architecture that performs iterative retrieval across multiple steps to answer complex, multi-part questions. It decomposes queries into intermediate reasoning steps, retrieves information at each step, and synthesizes a comprehensive answer through entity linking and knowledge chaining.
+
+#### 🎨 Design Principles
+- **Iterative Reasoning**: Progressive information gathering through multiple retrieval rounds
+- **Entity-Driven Navigation**: Using extracted entities to guide subsequent retrieval steps
+- **Convergence Detection**: Automatic termination when sufficient information is gathered
+- **Knowledge Synthesis**: Coherent integration of information from multiple sources
+- **Complexity Handling**: Graceful degradation for queries requiring different reasoning depths
+
+#### �📋 Overview
 Iterative reasoning through multiple retrieval steps for complex, multi-part queries.
 
 #### 🎯 Key Features
@@ -293,7 +333,17 @@ answer = mh_rag.reason_step_by_step("How did quantum mechanics influence modern 
 
 ### 5. RAG with Feedback Loop
 
-#### 📋 Overview
+#### � Definition
+**RAG with Feedback Loop** implements continuous learning and improvement through integrated user feedback mechanisms. It captures explicit and implicit feedback signals to refine retrieval strategies, generation parameters, and system behavior over time, creating an adaptive RAG system that improves with usage.
+
+#### 🎨 Design Principles
+- **Continuous Learning**: Real-time adaptation based on user feedback
+- **Multi-Modal Feedback**: Support for explicit ratings, implicit signals, and behavioral data
+- **Reinforcement Learning**: Policy optimization for improved performance
+- **Feedback Attribution**: Precise mapping of feedback to system components
+- **Privacy Preservation**: Anonymous feedback aggregation and processing
+
+#### �📋 Overview
 Continuous improvement through integrated user feedback mechanisms.
 
 #### 🎯 Key Features
@@ -348,7 +398,17 @@ feedback_rag.update_from_feedback({"rating": 4, "comments": "Good but could be m
 
 ### 6. Plan-and-Solve RAG
 
-#### 📋 Overview
+#### � Definition
+**Plan-and-Solve RAG** is a decompositional architecture that breaks complex queries into executable sub-tasks with systematic execution. It employs planning algorithms to decompose problems, schedules task execution with dependency resolution, and synthesizes results into coherent final answers, mimicking human problem-solving approaches.
+
+#### 🎨 Design Principles
+- **Problem Decomposition**: Systematic breakdown of complex queries into manageable tasks
+- **Dependency Resolution**: Intelligent ordering and prerequisite management
+- **Parallel Execution**: Concurrent processing of independent tasks
+- **Result Synthesis**: Coherent integration of sub-task outputs
+- **Scalability**: Efficient handling of varying problem complexities
+
+#### �📋 Overview
 Decomposes complex queries into executable sub-tasks with systematic execution.
 
 #### 🎯 Key Features
@@ -406,7 +466,17 @@ print(f"Final Analysis: {solution.answer}")
 
 ### 7. RAG with Tool Use
 
-#### 📋 Overview
+#### � Definition
+**RAG with Tool Use** extends retrieval-augmented generation by integrating external tools and APIs, enabling the system to perform computations, access real-time data, and execute specialized functions. It implements function calling capabilities within the RAG pipeline, allowing dynamic tool invocation based on query requirements.
+
+#### 🎨 Design Principles
+- **Tool Registry**: Extensible ecosystem of reusable tools and functions
+- **Dynamic Invocation**: Runtime tool selection based on query analysis
+- **Result Integration**: Seamless incorporation of tool outputs into generation
+- **Safety Mechanisms**: Validation and sandboxing of tool executions
+- **Fallback Handling**: Graceful degradation when tools are unavailable
+
+#### �📋 Overview
 Extends RAG capabilities through external tool and API integration.
 
 #### 🎯 Key Features
@@ -465,7 +535,17 @@ answer = tool_rag.query_with_tools(
 
 ### 8. ReAct RAG
 
-#### 📋 Overview
+#### � Definition
+**ReAct RAG** combines Reasoning and Acting in a unified framework where the system interleaves chain-of-thought reasoning with executable actions. It implements a thought-action-observation loop that allows dynamic information gathering and reasoning, enabling more sophisticated problem-solving capabilities within the RAG paradigm.
+
+#### 🎨 Design Principles
+- **Interleaved Reasoning**: Alternating thought generation and action execution
+- **Dynamic Planning**: Adaptive strategy adjustment based on observations
+- **Action Grounding**: Executable actions tied to real information sources
+- **Termination Criteria**: Intelligent stopping based on confidence and completeness
+- **Trace Preservation**: Maintainable reasoning chains for explanation
+
+#### �📋 Overview
 Reasoning + Acting framework combining chain-of-thought with executable actions.
 
 #### 🎯 Key Features
@@ -523,7 +603,17 @@ print(f"Reasoning Trace: {trace}")
 
 ### 9. Self-RAG
 
-#### 📋 Overview
+#### � Definition
+**Self-RAG** implements meta-cognitive capabilities where the system evaluates and critiques its own outputs, identifying knowledge gaps and performing iterative refinement. It combines generation with self-assessment, enabling the system to detect hallucinations, identify missing information, and improve answer quality through reflective reasoning.
+
+#### 🎨 Design Principles
+- **Self-Critique**: Autonomous evaluation of generated content
+- **Gap Detection**: Identification of knowledge deficiencies and uncertainties
+- **Iterative Refinement**: Multi-round improvement based on self-assessment
+- **Confidence Calibration**: Accurate uncertainty quantification
+- **Knowledge Expansion**: Proactive retrieval to address identified gaps
+
+#### �📋 Overview
 Self-reflective RAG with meta-cognitive capabilities for output evaluation and refinement.
 
 #### 🎯 Key Features
@@ -581,7 +671,17 @@ answer = self_rag.self_reflective_query(
 
 ### 10. Multimodal RAG
 
-#### 📋 Overview
+#### � Definition
+**Multimodal RAG** is a universal architecture that handles heterogeneous data modalities including text, images, audio, and structured data. It implements cross-modal understanding through unified vector representations, enabling seamless information retrieval and generation across different data types within a single coherent system.
+
+#### 🎨 Design Principles
+- **Unified Representation**: Common vector space for all modalities
+- **Cross-Modal Fusion**: Intelligent combination of information from different sources
+- **Modality-Specific Processing**: Specialized handling for each data type
+- **Late Fusion**: Optimal integration strategies for multimodal content
+- **Scalability**: Efficient processing of diverse and large-scale multimodal datasets
+
+#### �📋 Overview
 Universal RAG handling heterogeneous data modalities with cross-modal understanding.
 
 #### 🎯 Key Features
