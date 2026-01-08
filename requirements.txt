@@ -1,0 +1,5 @@
+groq
+pinecone-client
+langchain
+pypdf
+sentence-transformers
