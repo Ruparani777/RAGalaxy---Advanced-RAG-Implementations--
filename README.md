@@ -1057,9 +1057,8 @@ Special thanks to our growing community of researchers and practitioners pushing
 
 ### Get Involved
 - **🐛 Issues**: [Report bugs and request features](https://github.com/Ruparani777/RAGalaxy---Advanced-RAG-Implementations--/issues)
-- **💬 Discussions**: [Join community conversations](https://github.com/Ruparani777/RAGalaxy---Advanced-RAG-Implementations--/discussions)
-- **📧 Email**: For research collaborations and partnerships
-- **📰 Blog**: Stay updated with our [technical blog](https://ragalaxy.dev/blog)
+- **📧 Email**: For research collaborations and partnerships -thupakularuparani17@gmail.com
+
 
 ### Community Guidelines
 - Be respectful and inclusive
@@ -1093,13 +1092,11 @@ copies or substantial portions of the Software.
 
 **RAGalaxy**: Where retrieval meets reasoning, and knowledge becomes intelligence 🌌✨
 
-*Built with ❤️ by the global AI research community*
+*Built with ❤️ by the Rupa*
 
 ---
 
 **⭐ Star this repository to show your support!**
-
-**🔗 [Live Demo](https://ragalaxy.dev/demo) | [Documentation](https://ragalaxy.dev/docs) | [API Reference](https://ragalaxy.dev/api)**
 
 </div></content>
 <parameter name="filePath">c:\Users\gopic\Pinecone\README.md
